@@ -22,6 +22,8 @@ public class ClaimService {
             stmt.setDouble(3, amount);
             stmt.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }
@@ -36,6 +38,8 @@ public class ClaimService {
             stmt.setInt(2, id);
             stmt.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }
@@ -45,7 +49,7 @@ public class ClaimService {
         String sql = "SELECT * FROM claims";
 
         try (Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql)) {
+            ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
 
@@ -59,6 +63,8 @@ public class ClaimService {
 
             }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }

@@ -28,8 +28,18 @@ public class ClaimService {
 
     public void updateClaimStatus(int id, String status) throws SQLException {
 
-        
+        String sql = "UPDATE claims SET status = ? WHERE id = ?";
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, status);
+            stmt.setInt(2, id);
+            stmt.executeUpdate();
+
+        }
 
     }
+
+    
     
 }

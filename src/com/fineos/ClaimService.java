@@ -8,7 +8,7 @@ public class ClaimService {
 
     public ClaimService(String dbPath) throws SQLException {
 
-        conn = DriverManager.getConnection("jdbc:sqlite" + dbPath);
+        conn = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
 
     }
 

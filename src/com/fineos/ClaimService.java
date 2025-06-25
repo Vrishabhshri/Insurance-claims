@@ -40,6 +40,27 @@ public class ClaimService {
 
     }
 
-    
+    public void listClaims() throws SQLException {
+
+        String sql = "SELECT * FROM claims";
+
+        try (Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+
+                System.out.printf("ID: %d | Name: %s | Type: %s | Amount: %.2f | Status: %s | Created: %s\n",
+                    rs.getInt("id"),
+                    rs.getString("claimant_name"),
+                    rs.getString("claim_type"),
+                    rs.getDouble("amount"),
+                    rs.getString("status"),
+                    rs.getString("created_at"));
+
+            }
+
+        }
+
+    }
     
 }

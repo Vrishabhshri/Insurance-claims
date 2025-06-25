@@ -25,6 +25,19 @@ public class Main {
                     double amount = scanner.nextDouble();
                     service.submitClaim(name, type, amount);
                     break;
+                case 2:
+                    service.listClaims();
+                    break;
+                case 3:
+                    System.out.print("Claim ID: ");
+                    int id = scanner.nextInt();
+                    System.out.print("New Status: ");
+                    String status = scanner.next();
+                    service.updateClaimStatus(id, status);
+                    break;
+                case 4:
+                    System.out.println("Goodbye!");
+                    return;
             }
 
         }

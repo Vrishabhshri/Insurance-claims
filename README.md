@@ -10,6 +10,7 @@ How to Run:
 1. Install Java
 2. Clone this repo
 3. Download the [SQLite JDBC JAR](https://github.com/xerial/sqlite-jdbc/releases) and place it in the root folder
+- IMPORTANT NOTE: make sure to replace the version of the sqlite jdbc driver in the build.sh with the one you downloaded
 4. Run:
 
 ```bash
